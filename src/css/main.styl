@@ -1,0 +1,338 @@
+@import fonts;
+
+//measurements
+wrapperMaxWidth = 1275px;
+contentWrapperMaxWidth = 1190px;
+contentPadding = 0 40px;
+mainFontSize = 19px;
+buttonFontSize = 14px;
+secondaryTitleFontSize = 16px;
+priceFontSize = 18px;
+tertiaryTitleFontSize = 20px;
+mainTitleFontSize = 60px;
+
+//colors
+heroBgColor = #92b8ad;
+footerBgColor = #542d4c;
+decorationColor = #e03a6a;
+mainHighlightColor = #542d4c;
+secHighlightColor = #5eb098;
+lightestColor = #fff;
+darkestColor = #000;
+bgContentColor = #f7f7f7;
+discreetColor = #cfcfcf;
+secDescreetColor = #dfdfdf;
+textColor = #666666;
+controlColor = #cdcdcd;
+
+html,
+body
+	font-family: 'Rubik';
+	background: bgContentColor;
+
+//common classes
+
+.pull-right
+	float: right;
+	
+.fade
+	opacity: .2;
+	
+.pointer
+	cursor: pointer;
+
+//specific css
+
+.wrapper
+	width: 100%;
+	margin: 0 auto 30px auto;
+	// padding: contentPadding;
+	box-sizing: border-box;
+	max-width: wrapperMaxWidth;
+	
+	&.hero-wrapper
+		background: url('../img/hero.jpg') no-repeat;
+		background-color: heroBgColor;
+		background-position: center top;
+		
+	&.footer-wrapper
+		background: url('../img/footerBg.jpg') no-repeat;
+		background-color: footerBgColor;
+		background-position: center top;
+		height: 511px;
+		margin: 180px 0 0 0;
+		
+	&.wide-wrapper
+		padding: 0;
+		max-width: none;
+	
+	&.content-wrapper
+		max-width: contentWrapperMaxWidth;
+	
+.logo
+	width: 60px;
+
+.header
+	margin-top: 30px;
+	flex: 1 100%;
+	margin-bottom: 30px;
+	
+.footer
+	max-width: wrapperMaxWidth;
+	margin: 90px auto 0 auto;
+	overflow: hidden;
+	
+.decoration
+	border-bottom: 10px solid decorationColor;
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+	
+.copyright-inner-wrapper
+	width: 350px;
+	margin: 60px auto 40px;
+	
+	.logo
+		vertical-align: middle;
+		margin-right: 15px;
+		width: 56px;
+	
+	.main-paragraph
+		max-width: none;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+		color: textColor;
+	
+.hero
+	height: 768px;
+	max-width: wrapperMaxWidth;
+	background-position: center top;
+	box-sizing: border-box;
+	background-size: cover;
+	overflow: hidden;
+	font-size: 0;
+	padding: contentPadding;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	
+.nav
+	float: right;
+	font-size: mainFontSize;
+
+	ul
+		padding: 0;
+		margin: 0;
+
+		> li
+			list-style: none;
+			display: inline-block;
+			margin-left: 40px;
+			vertical-align: middle;
+			
+			a
+				text-decoration: none;
+				color: mainHighlightColor;
+				text-transform: uppercase;
+				
+				.icon
+					width: 35px;
+				
+.half
+	width: 50%;
+	display: inline-block;
+	font-size: mainFontSize;
+	margin-top: -190px;
+	padding: 0 20px;
+	box-sizing: border-box;
+    
+.main-title
+	font-size: mainTitleFontSize;
+	color: mainHighlightColor;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0;
+	
+.main-paragraph
+	color: mainHighlightColor;
+	margin-top: 0;
+	max-width: 450px;
+	
+	&.negative
+		color: lightestColor;
+		font-size: tertiaryTitleFontSize;
+		text-align: center;
+		max-width: 760px;
+		margin: 40px auto;
+		line-height: 1.2;
+
+.btn
+	background: mainHighlightColor;
+	border-radius: 30px;
+	padding: 14px 60px;
+	display: inline-block;
+	color: lightestColor;
+	text-decoration: none;
+	font-size: buttonFontSize;
+	text-transform: uppercase;
+	
+	&.sec
+		background-color: secHighlightColor;
+	
+.secondaryTitle
+	display: inline-block;
+	font-size: secondaryTitleFontSize;
+	margin-left: 50px;
+	text-transform: uppercase;
+	margin-right: 30px;
+	
+	&:first-child
+		margin-left: 0;
+		
+.tertiaryTitle
+	font-size: tertiaryTitleFontSize;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-top: 135px;
+	margin-bottom: 50px;
+	color: textColor;
+	
+	&.negative
+		color: lightestColor;
+		font-size: tertiaryTitleFontSize + 5px;
+		margin-top: 100px;
+		margin-bottom: 20px;
+		
+//flickity
+		
+.carousel-cell
+	background: white;
+	width: 290px;
+	height: 408px;
+	margin-right: 10px;
+	-webkit-transition: opacity .3s, box-shadow .7s;
+	transition: opacity .3s, box-shadow .7s;
+	padding: 20px;
+	text-align: center;
+	box-sizing: border-box;
+	
+	&:last-child
+		margin-right: 0;
+		
+	&:hover
+		box-shadow: 0 15px 40px #cdcdcd;
+
+		.carousel-btn
+			opacity: 1;		
+
+.carousel-title
+	font-size: 12px;
+	color: discreetColor;
+	text-transform: uppercase;
+	text-align: left;
+	margin: 0;
+	
+.carousel-description
+	color: textColor;
+	font-size: secondaryTitleFontSize;
+	font-weight: normal;
+	margin: 10px 0 10px;
+	
+.carousel-price
+	color: darkestColor;
+	font-size: priceFontSize;
+	margin: 0;
+	font-weight: normal;
+	
+.carousel-btn
+	padding: 7px 30px;
+	margin-top: 16px;
+	opacity: 0;
+	-webkit-transition: opacity .7s;
+	transition: opacity .7s;
+
+	.icon
+		width: 27px;
+		vertical-align: middle;
+		margin-right: 15px;
+	
+.flickity-page-dots
+	dimensions = 14px;
+	
+	bottom: -45px;
+
+	.dot
+		width: dimensions;
+		height: dimensions;
+		border: 2px solid bgContentColor;
+		-webkit-transition: border .7s;
+		transition: border .7s;
+		
+		&.is-selected
+			background: lightestColor;
+			border-color: controlColor;
+
+.flickity-viewport
+	padding: 10px 0 30px;
+
+
+
+
+
+
+
+
+
+
+
+
+//angular material
+	
+.md-label
+	text-transform: uppercase;
+	color: textColor;
+	line-height: 2;
+	
+md-checkbox
+	.md-container
+		top: 46%;
+		
+	.md-icon
+		border-color: secDescreetColor;
+		
+//////////////	
+//animations//
+//////////////
+/* Pop */
+@-webkit-keyframes hvr-pop {
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+@keyframes hvr-pop {
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+.hvr-pop
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+
+.hvr-pop:hover,
+.hvr-pop:focus,
+.hvr-pop:active
+	-webkit-animation-name: hvr-pop;
+	animation-name: hvr-pop;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;

@@ -1,0 +1,31 @@
+{
+  "name": "teste-rv",
+  "version": "1.0.0",
+  "description": "teste red ventures",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardomagaldi/teste-rv.git"
+  },
+  "author": "eduardo magaldi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardomagaldi/teste-rv/issues"
+  },
+  "homepage": "https://github.com/eduardomagaldi/teste-rv#readme",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7",
+    "angular-material": "=1.0.0",
+    "flickity": "^2.0.5",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.6.0"
+  },
+  "devDependencies": {
+    "gulp-connect": "^5.0.0"
+  }
+}
