@@ -1,4 +1,4 @@
-# Red Ventures Test
+# Evnts Test
 ## Eduardo Magaldi
 
 ### Used in this project:
@@ -6,7 +6,6 @@
 - HTML5 Boilerplate
 - Stylus
 - Gulp
-- [Flickity](http://flickity.metafizzy.co/)
 - Angular.js
 - Angular Material
 

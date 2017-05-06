@@ -21,7 +21,6 @@
     "angular-animate": "^1.4.7",
     "angular-aria": "^1.4.7",
     "angular-material": "=1.0.0",
-    "flickity": "^2.0.5",
     "gulp": "^3.9.1",
     "gulp-stylus": "^2.6.0"
   },

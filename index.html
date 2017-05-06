@@ -3,12 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Red Ventures Test</title>
+		<title>Evnts Test</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="./css/normalize.css">
-		<link rel="stylesheet" href="./vendor/flickity.min.css" media="screen">
 		<link rel="stylesheet" href="./vendor/angular-material.min.css" media="screen">
 		<link rel="stylesheet" href="./css/main.css">
 	</head>
@@ -17,260 +16,54 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 		<![endif]-->
 
-		<div class="wrapper wide-wrapper hero-wrapper">
-			<div class="hero">
-				<header class="header">
-					<img class="logo" src="./img/logo.svg" alt="O">
-
-					<nav class="nav">
-						<ul>
-							<li><a class="hvr-pop" href="#">Home</a></li>
-							<li><a class="hvr-pop" href="#">Products</a></li>
-							<li><a class="hvr-pop" href="#">Contact</a></li>
-							<li><a class="hvr-pop" href="#"><img class="icon" src="./img/cart.svg" alt="Cart"></a></li>
-						</ul>
-					</nav>
-				</header>
-
-				<div class="half"></div>
-				<div class="half">
-					<h1 class="main-title">Collection 2016</h1>
-					<p class="main-paragraph">Some cool text here about the new collection of design furniture 2016</p>
-					<a href="#" class="btn hvr-pop">Buy now</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="wrapper content-wrapper" ng-app="myApp">
-			<div class="controls-wrapper"> <!-- ng-controller="FilterController" -->
-				<h2 class="secondaryTitle">Type:</h2>
 
 				<!-- <input type="checkbox" name="armchairs" ng-model="armchairs"> -->
-				<md-checkbox ng-init="armchairs = true" ng-model="armchairs">
-					armchairs
-				</md-checkbox>
 				
-				<!-- <label for="armchairs">armchairs</label> -->
 
-				<md-checkbox ng-init="chairs = true" ng-model="chairs">
-					chairs
-				</md-checkbox>
+				<div ng-app="app">
 
-				<h2 class="secondaryTitle">Material:</h2>
+					<md-checkbox ng-init="armchairs = true" ng-model="armchairs">
+						armchairs
+					</md-checkbox>
 
-				<md-checkbox ng-init="wood = true" ng-model="wood">
-					wood
-				</md-checkbox>
+					<div ng-controller="eventsController">
+						<ul class="event-list">
+							<li ng-repeat="event in events" class="event">
+								
 
-				<md-checkbox ng-init="foam = true" ng-model="foam">
-					foam
-				</md-checkbox>
 
-				<a class="btn sec pointer pull-right hvr-pop" ng-click="wood = true; foam = true; chairs = true; armchairs = true;">See all products</a>
 
-				<hr />
+									<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
 
-				<h3 class="tertiaryTitle first">New armchairs</h3>
 
-				<div class="main-carousel carousel" data-flickity='
-					{ 	
-						"cellAlign": "left",
-						"groupCells": 4, 
-						"prevNextButtons": false
-					}
-					'>
-					<div class="carousel-cell" ng-class="{fade: !wood && !armchairs}">
-						<h3 class="carousel-title">Armchair / wood</h3>
-						<img src="./img/chair1.jpg" alt="Modern Black Armchair">
-						<h4 class="carousel-description">Modern Black Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !foam && !armchairs}">
-						<h3 class="carousel-title">Armchair / foam</h3>
-						<img src="./img/chair2.jpg" alt="Modern Gray Armchair">
-						<h4 class="carousel-description">Modern Gray Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !foam && !armchairs}">
-						<h3 class="carousel-title">Armchair / foam</h3>
-						<img src="./img/chair3.jpg" alt="Light Blue Armchair">
-						<h4 class="carousel-description">Light Blue Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !wood && !armchairs}">
-						<h3 class="carousel-title">Armchair / wood</h3>
-						<img src="./img/chair4.jpg" alt="Black and Wood Armchair">
-						<h4 class="carousel-description">Black and Wood Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !wood && !chairs}">
-						<h3 class="carousel-title">Chair / wood</h3>
-						<img src="./img/chair5.jpg" alt="Wood Design Chair">
-						<h4 class="carousel-description">Wood Design Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !foam && !chairs}">
-						<h3 class="carousel-title">Chair / foam</h3>
-						<img src="./img/chair6.jpg" alt="Wood Premium Chair">
-						<h4 class="carousel-description">Wood Premium Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !wood && !chairs}">
-						<h3 class="carousel-title">Chair / wood</h3>
-						<img src="./img/chair7.jpg" alt="White and Wood Chair">
-						<h4 class="carousel-description">White and Wood Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell" ng-class="{fade: !wood && !chairs}">
-						<h3 class="carousel-title">Chair / wood</h3>
-						<img src="./img/chair8.jpg" alt="Black and Wood Chair">
-						<h4 class="carousel-description">Black and Wood Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
+
+										
+										<md-card-title>
+											<md-card-title-text>
+											<span class="md-headline">{{event.name}}</span>
+												<span class="md-subhead">Large</span>
+											</md-card-title-text>
+											<md-card-title-media>
+												<div class="md-media-lg card-media">
+													<img ng-src="{{event.image}}">
+
+												</div>
+											</md-card-title-media>
+										</md-card-title>
+										<md-card-actions layout="row" layout-align="end center">
+											<md-button>Veja mais</md-button>
+										</md-card-actions>
+									</md-card>
+
+
+
+							</li>
+						</ul>
 					</div>
 				</div>
 
-				<h3 class="tertiaryTitle">Best of 2016</h3>
 
-				<div class="main-carousel" data-flickity='{
-						"cellAlign": "left",
-						"groupCells": 4,
-						"prevNextButtons": false
-					}'>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Chair / wood</h3>
-						<img src="./img/chair5.jpg" alt="Wood Design Chair">
-						<h4 class="carousel-description">Wood Design Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Chair / foam</h3>
-						<img src="./img/chair6.jpg" alt="Wood Premium Chair">
-						<h4 class="carousel-description">Wood Premium Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Chair / wood</h3>
-						<img src="./img/chair7.jpg" alt="White and Wood Chair">
-						<h4 class="carousel-description">White and Wood Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Chair / wood</h3>
-						<img src="./img/chair8.jpg" alt="Black and Wood Chair">
-						<h4 class="carousel-description">Black and Wood Chair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Armchair / wood</h3>
-						<img src="./img/chair1.jpg" alt="Modern Black Armchair">
-						<h4 class="carousel-description">Modern Black Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Armchair / foam</h3>
-						<img src="./img/chair2.jpg" alt="Modern Gray Armchair">
-						<h4 class="carousel-description">Modern Gray Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Armchair / foam</h3>
-						<img src="./img/chair3.jpg" alt="Light Blue Armchair">
-						<h4 class="carousel-description">Light Blue Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-					<div class="carousel-cell">
-						<h3 class="carousel-title">Armchair / wood</h3>
-						<img src="./img/chair4.jpg" alt="Black and Wood Armchair">
-						<h4 class="carousel-description">Black and Wood Armchair</h4>
-						<h5 class="carousel-price">$ 350.00</h5>
-						<a href="#" class="btn sec carousel-btn hvr-pop">
-							<img alt="" src="./img/cart-white.svg" class="icon">
-							Buy Now
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="wrapper wide-wrapper footer-wrapper">
-
-			<footer class="footer">
-				<h3 class="tertiaryTitle negative">About us</h3>
-				<span class="decoration"></span>
-
-				<p class="main-paragraph negative">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-			</footer>
-		</div>
-
-		<div class="wrapper wide-wrapper copyright-wrapper">
-			<div class="copyright-inner-wrapper">
-				<img class="logo" src="./img/logo-dark.svg" alt="O">
-				<p class="main-paragraph">Copyright 2016 - all rights reserved</p>
-			</div>
-		</div>
-
-		<script src="./vendor/flickity.pkgd.min.js"></script>
+		<!-- <script src="./vendor/flickity.pkgd.min.js"></script> -->
 		
 		<script src="./vendor/angular.min.js"></script>
 		<script src="./vendor/angular-animate.min.js"></script>
@@ -279,7 +72,7 @@
 
 		<script>
 			var myApp = angular.module(
-					'myApp', 
+					'app', 
 					['ngAnimate', 'ngAria', 'ngMaterial']
 				)
 				.config(function($mdThemingProvider) {
@@ -305,6 +98,14 @@
 
 					$mdThemingProvider.theme('default')
 						.accentPalette('amazingPaletteName');
+
+				}).controller('eventsController', function($scope, $http) {
+					// $http.get('http://eng.evnts.rocks/events')
+					// .then(function(response) {
+					// 	$scope.events = response.data;
+					// });
+
+					$scope.events = [{"id":"1","name":"Hold the door","startDate":"10/01/2010","endDate":"11/01/2010","location":"Beyond the Wall","image":"https://unsplash.it/700","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"2","name":"Mountain and the Viper","startDate":"10/02/2010","endDate":"11/02/2010","location":"King's Landing","image":"https://unsplash.it/900","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"3","name":"The Red Wedding","startDate":"10/03/2010","endDate":"11/03/2010","location":"Riverrun","image":"https://unsplash.it/1200","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"4","name":"The Purple Wedding","startDate":"10/04/2010","endDate":"11/04/2010","location":"King's Landing","image":"https://unsplash.it/1400","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"5","name":"King in the North","startDate":"10/05/2010","endDate":"11/05/2010","location":"Winterfell","image":"https://unsplash.it/970","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"6","name":"The Battle for the Wall","startDate":"10/06/2010","endDate":"11/06/2010","location":"Winterfell","image":"https://unsplash.it/1700","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"7","name":"Trial by Combat","startDate":"10/07/2010","endDate":"11/07/2010","location":"King's Landing","image":"https://unsplash.it/500","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."}];
 				});
 		</script>
 
