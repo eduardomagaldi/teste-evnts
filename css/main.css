@@ -7,8 +7,10 @@
   display: inline-block;
   margin-left: 40px;
   vertical-align: middle;
-  width: 30%;
 }
 .event-list > li.event img {
   width: 100%;
+}
+.event-list > li.event .md-subhead {
+  padding-right: 20px;
 }

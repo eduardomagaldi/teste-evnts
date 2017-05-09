@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Evnts Test</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="./css/normalize.css">
+		<link rel="stylesheet" href="./vendor/angular-material.min.css" media="screen">
+		<link rel="stylesheet" href="./css/main.css">
+	</head>
+	<body>
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+
+
+				<!-- <input type="checkbox" name="armchairs" ng-model="armchairs"> -->
+				
+
+				<div ng-app="app">
+
+					<md-checkbox ng-init="armchairs = true" ng-model="armchairs">
+						armchairs
+					</md-checkbox>
+
+
+					<div id="gridContainer" ng-controller="eventsController as ctrl" ng-cloak>
+					         <md-content layout-padding>
+					            <md-grid-list
+					               md-cols-gt-md="12" md-cols-sm="3" md-cols-md="8"
+					               md-row-height-gt-md="1:1" md-row-height="4:3"
+					               md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
+					               <md-grid-tile
+					                  ng-repeat="event in events"
+					                  ng-style="{
+					                     'background': green
+					                  }"
+					                  md-colspan-gt-sm="2"
+					                  md-rowspan-gt-sm="2">
+
+						                <md-card>
+								        	<md-card-title>
+								        		<md-card-title-text>
+								        		<span class="md-headline">{{event.name}}</span>
+								        			<span class="md-subhead">{{event.description}}</span>
+								        		</md-card-title-text>
+								        		<md-card-title-media>
+								        			<div class="md-media-lg card-media">
+								        				<img ng-src="{{event.image}}">
+
+								        			</div>
+								        		</md-card-title-media>
+								        	</md-card-title>
+								        	<md-card-actions layout="row" layout-align="end center">
+								        		<md-button>Veja mais</md-button>
+								        	</md-card-actions>
+								        </md-card>
+
+					               </md-grid-tile>
+					            </md-grid-list>
+					         </md-content>
+					      </div>
+
+
+
+
+
+
+
+
+
+
+					<div ng-controller="eventsController">
+						
+								
+
+							<div ng-cloak>
+							  <md-grid-list
+							        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+							        md-row-height-gt-md="fit" md-row-height="900px"
+							        md-gutter="12px" md-gutter-gt-sm="8px" >
+
+							    <md-grid-tile ng-repeat="event in events" class="event" class="gray"
+							        md-rowspan="3" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+							      	
+							        <md-card>
+							        	<md-card-title>
+							        		<md-card-title-text>
+							        		<span class="md-headline">{{event.name}}</span>
+							        			<span class="md-subhead">{{event.description}}</span>
+							        		</md-card-title-text>
+							        		<md-card-title-media>
+							        			<div class="md-media-lg card-media">
+							        				<img ng-src="{{event.image}}">
+
+							        			</div>
+							        		</md-card-title-media>
+							        	</md-card-title>
+							        	<md-card-actions layout="row" layout-align="end center">
+							        		<md-button>Veja mais</md-button>
+							        	</md-card-actions>
+							        </md-card>
+
+							    </md-grid-tile>
+
+							    
+
+							  </md-grid-list>
+							</div>
+
+
+
+								<!-- <div flex-xs flex-gt-xs="50">
+
+									<md-card>
+										<md-card-title>
+											<md-card-title-text>
+											<span class="md-headline">{{event.name}}</span>
+												<span class="md-subhead">{{event.description}}</span>
+											</md-card-title-text>
+											<md-card-title-media>
+												<div class="md-media-lg card-media">
+													<img ng-src="{{event.image}}">
+
+												</div>
+											</md-card-title-media>
+										</md-card-title>
+										<md-card-actions layout="row" layout-align="end center">
+											<md-button>Veja mais</md-button>
+										</md-card-actions>
+									</md-card>
+
+								</div> -->
+
+							
+					</div>
+				</div>
+
+
+		<!-- <script src="./vendor/flickity.pkgd.min.js"></script> -->
+		
+		<script src="./vendor/angular.min.js"></script>
+		<script src="./vendor/angular-animate.min.js"></script>
+		<script src="./vendor/angular-aria.min.js"></script>
+		<script src="./vendor/angular-material.min.js"></script>
+
+		<script>
+			var myApp = angular.module(
+					'app', 
+					['ngAnimate', 'ngAria', 'ngMaterial']
+				)
+				.config(function($mdThemingProvider) {
+					$mdThemingProvider.definePalette('amazingPaletteName', {
+						'50': '5eb098',
+						'100': '5eb098',
+						'200': '5eb098',
+						'300': '5eb098',
+						'400': '5eb098',
+						'500': '5eb098',
+						'600': '5eb098',
+						'700': '5eb098',
+						'800': '5eb098',
+						'900': '5eb098',
+						'A100': '5eb098',
+						'A200': '5eb098',
+						'A400': '5eb098',
+						'A700': '5eb098',
+						'contrastDefaultColor': 'light',    
+						'contrastDarkColors': ['50', '100', '200', '300', '400', 'A100'],
+						'contrastLightColors': undefined
+					});
+
+					$mdThemingProvider.theme('default')
+						.accentPalette('amazingPaletteName');
+
+				}).controller('eventsController', function($scope, $http) {
+					// $http.get('http://eng.evnts.rocks/events')
+					// .then(function(response) {
+					// 	$scope.events = response.data;
+					// });
+
+					$scope.events = [{"id":"1","name":"Hold the door","startDate":"10/01/2010","endDate":"11/01/2010","location":"Beyond the Wall","image":"https://unsplash.it/700","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"2","name":"Mountain and the Viper","startDate":"10/02/2010","endDate":"11/02/2010","location":"King's Landing","image":"https://unsplash.it/900","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"3","name":"The Red Wedding","startDate":"10/03/2010","endDate":"11/03/2010","location":"Riverrun","image":"https://unsplash.it/1200","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"4","name":"The Purple Wedding","startDate":"10/04/2010","endDate":"11/04/2010","location":"King's Landing","image":"https://unsplash.it/1400","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"5","name":"King in the North","startDate":"10/05/2010","endDate":"11/05/2010","location":"Winterfell","image":"https://unsplash.it/970","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"6","name":"The Battle for the Wall","startDate":"10/06/2010","endDate":"11/06/2010","location":"Winterfell","image":"https://unsplash.it/1700","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"7","name":"Trial by Combat","startDate":"10/07/2010","endDate":"11/07/2010","location":"King's Landing","image":"https://unsplash.it/500","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."}];
+				});
+		</script>
+
+		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+		<script>
+			window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+			ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+		</script>
+		<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+	</body>
+</html>

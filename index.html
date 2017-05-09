@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="./css/normalize.css">
-		<link rel="stylesheet" href="./vendor/angular-material.min.css" media="screen">
+		<link rel="stylesheet" href="./vendor/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" href="./css/main.css">
 	</head>
 	<body>
@@ -16,88 +16,41 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 		<![endif]-->
 
+		<div class="container-fluid" ng-app="evntsApp">
+				<div class="row" ng-controller="eventsController">
+					<div ng-repeat="event in events" class="col-xs-12 col-md-4">
 
-				<!-- <input type="checkbox" name="armchairs" ng-model="armchairs"> -->
-				
+						<div class="jumbotron">
 
-				<div ng-app="app">
+							<a href="#" class="thumbnail">
+								<img ng-src="{{event.image}}" alt="">
+							</a>
+						
+							<h3>{{event.name}}</h3>
 
-					<md-checkbox ng-init="armchairs = true" ng-model="armchairs">
-						armchairs
-					</md-checkbox>
+							<strong>Início:</strong> <span>{{event.startDate}}</span><br/>
+							<strong>Fim:</strong> <span>{{event.endDate}}</span><br/>
+							<strong>Localização:</strong> <span>{{event.location}}</span><br/>
 
-					<div ng-controller="eventsController">
-						<ul class="event-list">
-							<li ng-repeat="event in events" class="event">
-								
+							<p>{{event.description}}</p>
+							<p><a class="btn btn-primary btn-lg" ng-href="/evento/{{event.id}}" role="button">Saiba mais</a></p>
+						</div>
 
-
-
-									<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-
-
-
-										
-										<md-card-title>
-											<md-card-title-text>
-											<span class="md-headline">{{event.name}}</span>
-												<span class="md-subhead">Large</span>
-											</md-card-title-text>
-											<md-card-title-media>
-												<div class="md-media-lg card-media">
-													<img ng-src="{{event.image}}">
-
-												</div>
-											</md-card-title-media>
-										</md-card-title>
-										<md-card-actions layout="row" layout-align="end center">
-											<md-button>Veja mais</md-button>
-										</md-card-actions>
-									</md-card>
-
-
-
-							</li>
-						</ul>
 					</div>
 				</div>
+		</div>
 
-
-		<!-- <script src="./vendor/flickity.pkgd.min.js"></script> -->
-		
 		<script src="./vendor/angular.min.js"></script>
+		<script src="./vendor/angular-route.min.js"></script>
 		<script src="./vendor/angular-animate.min.js"></script>
 		<script src="./vendor/angular-aria.min.js"></script>
-		<script src="./vendor/angular-material.min.js"></script>
 
 		<script>
-			var myApp = angular.module(
-					'app', 
-					['ngAnimate', 'ngAria', 'ngMaterial']
+			var evntsApp = angular.module(
+					'evntsApp', 
+					['ngAnimate', 'ngAria']
 				)
-				.config(function($mdThemingProvider) {
-					$mdThemingProvider.definePalette('amazingPaletteName', {
-						'50': '5eb098',
-						'100': '5eb098',
-						'200': '5eb098',
-						'300': '5eb098',
-						'400': '5eb098',
-						'500': '5eb098',
-						'600': '5eb098',
-						'700': '5eb098',
-						'800': '5eb098',
-						'900': '5eb098',
-						'A100': '5eb098',
-						'A200': '5eb098',
-						'A400': '5eb098',
-						'A700': '5eb098',
-						'contrastDefaultColor': 'light',    
-						'contrastDarkColors': ['50', '100', '200', '300', '400', 'A100'],
-						'contrastLightColors': undefined
-					});
-
-					$mdThemingProvider.theme('default')
-						.accentPalette('amazingPaletteName');
+				.config(function() {
 
 				}).controller('eventsController', function($scope, $http) {
 					// $http.get('http://eng.evnts.rocks/events')
