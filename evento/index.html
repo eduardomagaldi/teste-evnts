@@ -41,19 +41,19 @@
 							</ul>
 
 							<p><a ng-click="showme=true" class="btn btn-primary btn-lg" role="button">Veja quartos disponíveis</a></p>
-
-					
-								<a href="" ng-click="showme=true">Show</a>
-								<button ng-click="showme=false">Hide</button> 
-								
-								<div class="wrapper" ng-show="showme">
-								bla
-									<div ng-repeat="room in hotel.rooms">room</div>
-								</div>
-								  
-
-
 							
+							<div class="wrapper" ng-show="showme">
+								<div ng-repeat="room in hotel.rooms" class="alert alert-info" role="alert">
+									
+									<h4>{{room.name}}</h4>
+									<strong>Preço:</strong> <span>{{room.price}}</span><br/>
+									<ul>
+										<li ng-repeat="bed in room.beds">
+											{{bed}}
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 
 					</div>

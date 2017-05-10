@@ -7,7 +7,7 @@
 - Stylus
 - Gulp
 - Angular.js
-- Angular Material
+- Bootstrap
 
 ### How to run
 
