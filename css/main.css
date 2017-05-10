@@ -1,16 +1,4 @@
-.event-list {
-  padding: 0;
-  margin: 0;
-}
-.event-list > li.event {
-  list-style: none;
-  display: inline-block;
-  margin-left: 40px;
-  vertical-align: middle;
-}
-.event-list > li.event img {
-  width: 100%;
-}
-.event-list > li.event .md-subhead {
-  padding-right: 20px;
+.stars {
+  line-height: 50px;
+  font-size: 60px;
 }

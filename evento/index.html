@@ -28,12 +28,32 @@
 						
 							<h3>{{hotel.name}}</h3>
 
-							<strong>Início:</strong> <span>{{hotel.startDate}}</span><br/>
-							<strong>Fim:</strong> <span>{{hotel.endDate}}</span><br/>
+							<span class="stars">{{hotel.stars | stars}}</span><br/>
+							<strong>Distância do evento:</strong> <span>{{hotel.distanceToEvent}}</span><br/>
 							<strong>Localização:</strong> <span>{{hotel.location}}</span><br/>
 
 							<p>{{hotel.description}}</p>
-							<p><a class="btn btn-primary btn-lg" ng-href="/hotel/{{hotel.id}}" role="button">Saiba mais</a></p>
+
+							<ul>
+								<li ng-repeat="amenitie in hotel.amenities">
+									{{amenitie}}
+								</li>
+							</ul>
+
+							<p><a ng-click="showme=true" class="btn btn-primary btn-lg" role="button">Veja quartos disponíveis</a></p>
+
+					
+								<a href="" ng-click="showme=true">Show</a>
+								<button ng-click="showme=false">Hide</button> 
+								
+								<div class="wrapper" ng-show="showme">
+								bla
+									<div ng-repeat="room in hotel.rooms">room</div>
+								</div>
+								  
+
+
+							
 						</div>
 
 					</div>
@@ -61,6 +81,20 @@
 					console.log($location.$$hash);
 
 					$scope.events = [{"id":"1","name":"Hold the door","startDate":"10/01/2010","endDate":"11/01/2010","location":"Beyond the Wall","image":"https://unsplash.it/700","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"2","name":"Mountain and the Viper","startDate":"10/02/2010","endDate":"11/02/2010","location":"King's Landing","image":"https://unsplash.it/900","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"3","name":"The Red Wedding","startDate":"10/03/2010","endDate":"11/03/2010","location":"Riverrun","image":"https://unsplash.it/1200","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"4","name":"The Purple Wedding","startDate":"10/04/2010","endDate":"11/04/2010","location":"King's Landing","image":"https://unsplash.it/1400","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"5","name":"King in the North","startDate":"10/05/2010","endDate":"11/05/2010","location":"Winterfell","image":"https://unsplash.it/970","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"6","name":"The Battle for the Wall","startDate":"10/06/2010","endDate":"11/06/2010","location":"Winterfell","image":"https://unsplash.it/1700","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."},{"id":"7","name":"Trial by Combat","startDate":"10/07/2010","endDate":"11/07/2010","location":"King's Landing","image":"https://unsplash.it/500","description":"Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis."}];
+				}).filter('stars', function() {
+					return function(input) {
+
+						console.log(input, input);
+
+						input = parseInt(input, 10);
+						var output = [];
+
+						for (var i=0; i<input; i++) {
+							output.push('*');
+						}
+
+						return output.join('');
+					};
 				});
 		</script>
 
