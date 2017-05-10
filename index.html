@@ -51,7 +51,7 @@
 					['ngAnimate', 'ngAria']
 				)
 				.controller('eventsController', function($scope, $http) {
-					$http.get('http://eng.evnts.rocks/hotels')
+					$http.get('https://eng.evnts.rocks/hotels')
 					.then(function(response) {
 						$scope.events = response.data;
 					});
