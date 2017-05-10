@@ -7,9 +7,9 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="/teste-evnts/css/normalize.css">
-		<link rel="stylesheet" href="/teste-evnts/libs-evnts/bootstrap.min.css" media="screen">
-		<link rel="stylesheet" href="/teste-evnts/css/main.css">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../vendor/bootstrap.min.css" media="screen">
+		<link rel="stylesheet" href="../css/main.css">
 	</head>
 	<body>
 		<!--[if lte IE 9]>
@@ -20,7 +20,7 @@
 				<div class="row" ng-controller="eventController">
 					<div ng-repeat="hotel in hotels" class="col-xs-12 col-md-4">
 
-						<div class="jumbotron">
+						<div class="jumbotron" ng-cloak>
 
 							<a href="#" class="thumbnail">
 								<img ng-src="{{hotel.image}}" alt="">
@@ -52,6 +52,11 @@
 											{{bed}}
 										</li>
 									</ul>
+									<div class="clearfix">
+									<a class="btn btn-primary pull-right clearfix" data-toggle="modal" data-target="#exampleModal" data-whatever="{{room.name}}">
+										Reservar
+									</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -60,9 +65,40 @@
 				</div>
 		</div>
 
-		<script src="/teste-evnts/libs-evnts/angular.min.js"></script>
-		<script src="/teste-evnts/libs-evnts/angular-animate.min.js"></script>
-		<script src="/teste-evnts/libs-evnts/angular-aria.min.js"></script>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="exampleModalLabel">Reservar quarto</h4>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">Quarto:</label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="message-text" class="control-label">Messagem:</label>
+								<textarea class="form-control" id="message-text"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+						<button type="button" class="btn btn-primary">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<script src="../vendor/angular.min.js"></script>
+		<script src="../vendor/jquery.min.js"></script>
+		<script src="../vendor/bootstrap.min.js"></script>
+		<script src="../vendor/angular-animate.min.js"></script>
+		<script src="../vendor/angular-aria.min.js"></script>
 
 		<script>
 			var evntsApp = angular.module(
@@ -93,6 +129,17 @@
 						return output.join('');
 					};
 				});
+
+				$('#exampleModal').on('show.bs.modal', function (event) {
+					var button = $(event.relatedTarget) // Button that triggered the modal
+					var recipient = button.data('whatever') // Extract info from data-* attributes
+					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+					var modal = $(this)
+					modal.find('.modal-title').text('Reservar quarto ' + recipient)
+					modal.find('.modal-body input').val(recipient);
+				})
+
 		</script>
 
 		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

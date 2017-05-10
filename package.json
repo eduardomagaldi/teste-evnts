@@ -24,7 +24,8 @@
     "angular-route": "^1.6.4",
     "bootstrap": "^3.3.7",
     "gulp": "^3.9.1",
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "gulp-connect": "^5.0.0"

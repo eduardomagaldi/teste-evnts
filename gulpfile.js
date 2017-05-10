@@ -6,6 +6,8 @@ gulp.task('copy', function() {
 	gulp.src([
 		'./node_modules/bootstrap/dist/css/bootstrap.min.css',
 
+		'./node_modules/bootstrap/dist/js/bootstrap.min.js',
+		'./node_modules/jquery/dist/jquery.min.js',
 		'./node_modules/angular/angular.min.js',
 		'./node_modules/angular-route/angular-route.min.js',
 		'./node_modules/angular-animate/angular-animate.min.js',
