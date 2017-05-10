@@ -7,7 +7,7 @@
 - Stylus
 - Gulp
 - Angular.js
-- Bootstrap
+- Twitter Bootstrap
 
 ### How to run
 
